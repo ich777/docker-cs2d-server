@@ -2,13 +2,15 @@ FROM ubuntu
 
 MAINTAINER ich777
 
+RUN dpkg --add-architecture i386
 RUN apt-get update
-RUN apt-get -y install wget
+RUN apt-get -y install wget libgtk2.0-0:i386
 
 ENV DATA_DIR="/serverdata"
 ENV SERVER_DIR="${DATA_DIR}/serverfiles"
 ENV GAME_PARAMS=""
 ENV GAME_PORT=36963
+ENV FORCE_UPDATE=""
 ENV UID=99
 ENV GID=100
 
