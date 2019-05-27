@@ -10,7 +10,7 @@ echo "---Checking for CS2D executable ---"
 if [ ! -f ${SERVER_DIR}/CS2D ]; then
 	cd ${SERVER_DIR}
 	echo "---Downloading CS2D---"
-    wget -qi CS2D.zip http://www.unrealsoftware.de/get.php?get=cs2d_1008_linux.zip&p=1&cid=16295
+    wget -qO CS2D.zip http://www.unrealsoftware.de/get.php?get=cs2d_1008_linux.zip&p=1&cid=16295
     unzip -qo ${SERVER_DIR}/CS2D.zip
 	rm ${SERVER_DIR}/CS2D.zip
     sleep 2
@@ -28,7 +28,7 @@ echo "---Checking for CS2D Dedicated Server executable ---"
 if [ ! -f ${SERVER_DIR}/cs2d_dedicated ]; then
 	cd ${SERVER_DIR}
 	echo "---Downloading CS2D Dedicated Server---"
-    wget -qi CS2D-dedicated.zip http://www.unrealsoftware.de/files_pub/cs2d_dedicated_linux.zip
+    wget -qO CS2D-dedicated.zip http://www.unrealsoftware.de/files_pub/cs2d_dedicated_linux.zip
     unzip -qo ${SERVER_DIR}/CS2D-dedicated.zip
 	rm ${SERVER_DIR}/CS2D-dedicated.zip
     sleep 2
