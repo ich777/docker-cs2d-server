@@ -38,26 +38,27 @@ else
 fi
 
 if [ "${FORCE_UPDATE}" == "true" ]; then
+	if [ -d ${SERVER_DIR}/Backup ]; then
+		echo
+		echo "--------------------------------------------"
+		echo "----Please remove the old Backup Folder-----"
+		echo "---from your server directory to continue---"
+		echo "----the Force Update process and restart----"
+		echo "---------------the Container----------------"
+		echo
+		sleep infinity
+    fi
 	echo "---Forcing Update of CS2D moving files to 'Backup' folder---"
-    if [ ! -d ${DATA_DIR}/Backup ]; then
-	   	mkdir ${DATA_DIR}/Backup
-    else
+	if [ -d ${DATA_DIR}/Backup ]; then  
     	rm -R ${DATA_DIR}/Backup
         mkdir ${DATA_DIR}/Backup
+    fi
+    if [ ! -d ${DATA_DIR}/Backup ]; then
+	mkdir ${DATA_DIR}/Backup
 	fi
 	mv ${SERVER_DIR}/* ${DATA_DIR}/Backup/
 	if [ ! -d ${SERVER_DIR}/Backup ]; then
 		mkdir ${SERVER_DIR}/Backup
-    else
-    	echo
-        echo "--------------------------------------------"
-        echo "----Please remove the old Backup Folder-----"
-        echo "---from your server directory to continue---"
-        echo "----the Force Update process and restart----"
-        echo "---------------the Container----------------"
-        echo "--------------------------------------------"
-        echo
-        sleep infinity
     fi
     mv ${DATA_DIR}/Backup/* ${SERVER_DIR}/Backup/
     rm -R ${DATA_DIR}/Backup
