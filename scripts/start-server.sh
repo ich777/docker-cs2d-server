@@ -10,7 +10,7 @@ echo "---Checking for CS2D executable ---"
 if [ ! -f ${SERVER_DIR}/CS2D ]; then
 	cd ${SERVER_DIR}
 	echo "---Downloading CS2D---"
-    wget -qO CS2D.zip http://www.unrealsoftware.de/get.php?get=cs2d_1008_linux.zip&p=1&cid=16295
+    wget -qO CS2D.zip https://github.com/ich777/docker-cs2d-server/raw/master/cs/cs2d_1008_linux.zip
     unzip -qo ${SERVER_DIR}/CS2D.zip
 	rm ${SERVER_DIR}/CS2D.zip
     sleep 2
