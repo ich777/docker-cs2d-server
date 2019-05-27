@@ -14,11 +14,12 @@ if [ ! -f ${SERVER_DIR}/CS2D ]; then
     unzip -qo ${SERVER_DIR}/CS2D.zip
 	rm ${SERVER_DIR}/CS2D.zip
     sleep 2
-    if [ ! -f ${DATA_DIR}/CS2D ]; then
+    if [ ! -f ${SERVER_DIR}/CS2D ]; then
     	echo "----------------------------------------------------------------------------------------------------"
     	echo "---Something went wrong, please install CS2D manually. Putting server into sleep mode---"
         echo "----------------------------------------------------------------------------------------------------"
         sleep infinity
+    echo "---CS2D successfully downloaded---"
     fi
 else
 	echo "---CS2D executable found---"
@@ -32,12 +33,13 @@ if [ ! -f ${SERVER_DIR}/cs2d_dedicated ]; then
     unzip -qo ${SERVER_DIR}/CS2D-dedicated.zip
 	rm ${SERVER_DIR}/CS2D-dedicated.zip
     sleep 2
-    if [ ! -f ${DATA_DIR}/cs2d_dedicated ]; then
+    if [ ! -f ${SERVER_DIR}/cs2d_dedicated ]; then
     	echo "----------------------------------------------------------------------------------------------------"
     	echo "---Something went wrong, please install CS2D Dedicated Server manually. Putting server into sleep mode---"
         echo "----------------------------------------------------------------------------------------------------"
         sleep infinity
     fi
+    echo "---CS2D Dedicated Server successfully downloaded---"
 else
 	echo "---CS2D Dedicated Server executable found---"
 fi
