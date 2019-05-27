@@ -4,7 +4,7 @@ MAINTAINER ich777
 
 RUN dpkg --add-architecture i386
 RUN apt-get update
-RUN apt-get -y install wget libgtk2.0-0:i386
+RUN apt-get -y install wget unzip libgtk2.0-0:i386
 
 ENV DATA_DIR="/serverdata"
 ENV SERVER_DIR="${DATA_DIR}/serverfiles"
