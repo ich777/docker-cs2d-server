@@ -100,4 +100,4 @@ chmod -R 770 ${DATA_DIR}
 
 echo "---Starting Server---"
 cd ${SERVER_DIR}
-${SERVER_DIR}/cs2d_dedicated -port ${GAME_PORT} ${GAME_PARAMS}
+${SERVER_DIR}/cs2d_dedicated ${GAME_PARAMS}
