@@ -15,8 +15,8 @@ CounterStrike 2D is a free to play top down shooter (you can get it on Steam or 
 | GID | Group Identifier | 100 |
 
 # Run example
-
-docker run --name OpenTTD -d \
+```
+docker run --name CS2D -d \
     -p 36963:36963/udp \
     --env 'GAME_PARAMS=' \
     --env 'GAME_PORT=36963' \
@@ -26,6 +26,7 @@ docker run --name OpenTTD -d \
     --volume /mnt/user/appdata/cs2d:/serverdata/serverfiles \
     --restart=unless-stopped \
     ich777/cs2dserver:latest
+```
 
 This Docker was mainly created for the use with Unraid, if you don’t use Unraid you should definitely try it!
 
