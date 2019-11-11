@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "---Setting umask to ${UMASK}---"
+umask ${UMASK}
+
 echo "---Checking for CS2D executable ---"
 if [ ! -f ${SERVER_DIR}/CS2D ]; then
 	cd ${SERVER_DIR}
@@ -97,7 +100,7 @@ echo
 fi
 
 echo "---Preparing Server---"
-chmod -R 770 ${DATA_DIR}
+chmod -R 777 ${DATA_DIR}
 
 echo "---Starting Server---"
 cd ${SERVER_DIR}
