@@ -6,7 +6,12 @@ echo "---Checking for CS2D executable ---"
 if [ ! -f ${SERVER_DIR}/CS2D ]; then
 	cd ${SERVER_DIR}
 	echo "---Downloading CS2D---"
-    wget -qO CS2D.zip https://github.com/ich777/docker-cs2d-server/raw/master/cs/cs2d_1008_linux.zip
+    if wget -q -nc --show-progress --progress=bar:force:noscroll -O CS2D.zip https://github.com/ich777/docker-cs2d-server/raw/master/cs/cs2d_1008_linux.zip ; then
+    	echo "---Successfully downloaded CS2D executable---"
+	else
+    	echo "---Can't download CS2D executable putting server into sleep mode---"
+        sleep infinity
+	fi
     unzip -qo ${SERVER_DIR}/CS2D.zip
 	rm ${SERVER_DIR}/CS2D.zip
     sleep 2
@@ -25,7 +30,12 @@ echo "---Checking for CS2D Dedicated Server executable ---"
 if [ ! -f ${SERVER_DIR}/cs2d_dedicated ]; then
 	cd ${SERVER_DIR}
 	echo "---Downloading CS2D Dedicated Server---"
-    wget -qO CS2D-dedicated.zip http://www.unrealsoftware.de/files_pub/cs2d_dedicated_linux.zip
+    if wget -q -nc --show-progress --progress=bar:force:noscroll -O CS2D-dedicated.zip http://www.unrealsoftware.de/files_pub/cs2d_dedicated_linux.zip ; then
+    	echo "---Successfully downloaded CS2D Dedicated Server executable---"
+	else
+    	echo "---Can't download CS2D Dedicated Server executable putting server into sleep mode---"
+        sleep infinity
+	fi
     unzip -qo ${SERVER_DIR}/CS2D-dedicated.zip
 	rm ${SERVER_DIR}/CS2D-dedicated.zip
     sleep 2
@@ -69,7 +79,12 @@ if [ "${FORCE_UPDATE}" == "true" ]; then
     echo "---Backup complete---"
     cd ${SERVER_DIR}
 	echo "---Downloading CS2D---"
-    wget -qO CS2D.zip https://github.com/ich777/docker-cs2d-server/raw/master/cs/cs2d_1008_linux.zip
+    if wget -q -nc --show-progress --progress=bar:force:noscroll -O CS2D.zip https://github.com/ich777/docker-cs2d-server/raw/master/cs/cs2d_1008_linux.zip ; then
+    	echo "---Successfully downloaded CS2D executable---"
+	else
+    	echo "---Can't download CS2D executable putting server into sleep mode---"
+        sleep infinity
+	fi
     unzip -qo ${SERVER_DIR}/CS2D.zip
 	rm ${SERVER_DIR}/CS2D.zip
     sleep 2
@@ -81,7 +96,12 @@ if [ "${FORCE_UPDATE}" == "true" ]; then
     fi
     echo "---CS2D successfully downloaded---"
 	echo "---Downloading CS2D Dedicated Server---"
-    wget -qO CS2D-dedicated.zip http://www.unrealsoftware.de/files_pub/cs2d_dedicated_linux.zip
+    if wget -q -nc --show-progress --progress=bar:force:noscroll -O http://www.unrealsoftware.de/files_pub/cs2d_dedicated_linux.zip ; then
+    	echo "---Successfully downloaded CS2D Dedicated Server executable---"
+	else
+    	echo "---Can't download CS2D Dedicated Server executable putting server into sleep mode---"
+        sleep infinity
+	fi
     unzip -qo ${SERVER_DIR}/CS2D-dedicated.zip
 	rm ${SERVER_DIR}/CS2D-dedicated.zip
     sleep 2
