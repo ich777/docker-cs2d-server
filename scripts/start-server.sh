@@ -1,7 +1,4 @@
 #!/bin/bash
-echo "---Setting umask to ${UMASK}---"
-umask ${UMASK}
-
 echo "---Checking for CS2D executable ---"
 if [ ! -f ${SERVER_DIR}/CS2D ]; then
 	cd ${SERVER_DIR}
@@ -75,7 +72,7 @@ if [ "${FORCE_UPDATE}" == "true" ]; then
     fi
     mv ${DATA_DIR}/Backup/* ${SERVER_DIR}/Backup/
     rm -R ${DATA_DIR}/Backup
-    chmod -R 770 ${SERVER_DIR}/Backup
+    chmod -R ${DATA_PERM} ${SERVER_DIR}/Backup
     echo "---Backup complete---"
     cd ${SERVER_DIR}
 	echo "---Downloading CS2D---"
@@ -120,7 +117,7 @@ echo
 fi
 
 echo "---Preparing Server---"
-chmod -R 777 ${DATA_DIR}
+chmod -R ${DATA_PERM} ${DATA_DIR}
 
 echo "---Starting Server---"
 cd ${SERVER_DIR}
